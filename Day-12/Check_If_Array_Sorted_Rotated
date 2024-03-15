@@ -1,0 +1,25 @@
+class Solution {
+public:
+    bool check(vector<int>& nums) {
+        int n = nums.size();
+        int cnt = -1;
+        for(int i=1;i<n;i++){
+            if(nums[i-1] > nums[i]){
+                    cnt=i;
+                    break;
+            }
+        }
+        if(cnt==-1){
+            return true;
+        }
+        for(int i=cnt+1;i<n;i++){
+            if(nums[i-1] > nums[i]){
+                    return false;
+            }
+        }
+        if(nums[n-1] > nums[0]){
+                return false;
+        }
+        return true;
+    }
+};
